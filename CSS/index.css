@@ -46,8 +46,45 @@ a {
    text-decoration: none;
 }
 
-i{
+i {
    cursor: pointer;
+}
+
+.custom_button {
+   position: relative;
+   border: 1px solid var(--main-color);
+   border-radius: 8px;
+   background-color: transparent;
+   text-transform: uppercase;
+   margin: 3rem .5rem;
+   padding: .5rem 1rem;
+   overflow: hidden;
+}
+
+.custom_button a {
+   color: var(--text-color);
+   letter-spacing: 1px;
+   font-size: 1.2rem;
+}
+
+.custom_button::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0;
+   height: 100%;
+   background-color: var(--main-color);
+   transition: width .5s ease-in-out;
+   z-index: -1;
+}
+
+.custom_button:hover a {
+   color: var(--hover-text-color);
+}
+
+.custom_button:hover::before {
+   width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -78,12 +115,12 @@ body {
    overflow-x: hidden;
 }
 
-section{
+section {
    min-height: 100vh;
 }
 
 /* NAVIGATION */
-.hamburger_icon{
+.hamburger_icon {
    position: absolute;
    top: 0;
    right: 0;
@@ -92,6 +129,11 @@ section{
       font-size: 3rem;
       color: white;
       margin: 3rem;
+   }
+
+   i:hover {
+      color: var(--main-color);
+      transition: all .5s ease;
    }
 }
 
@@ -106,7 +148,7 @@ nav {
    left: 0;
    z-index: 1;
 
-   .close_icon{
+   .close_icon {
       position: absolute;
       top: 0;
       right: 0;
@@ -115,6 +157,11 @@ nav {
       i {
          font-size: 3rem;
       }
+
+      i:hover {
+         color: var(--main-color);
+         transition: all .5s ease;
+      }
    }
 }
 
@@ -122,7 +169,7 @@ nav {
    display: none;
 }
 
-.navigation_menu{
+.navigation_menu {
    li {
       font-size: 2rem;
       text-transform: uppercase;
@@ -130,20 +177,20 @@ nav {
       cursor: pointer;
    }
 
-   li:hover{
+   li:hover {
       transform: scale(1.05);
       transition: transform .5s ease-in-out;
    }
 }
 
 /* HERO SECTION */
-#hero{
+#hero {
    width: 100%;
    position: relative;
    display: flex;
 }
 
-.devil-left{
+.devil-left {
    background-image: url('./../Assets/Images/devil.png');
    width: 100%;
    background-size: cover;
@@ -152,7 +199,7 @@ nav {
    position: relative;
 }
 
-.devil-left .overlay{
+.devil-left .overlay {
    position: absolute;
    top: 0;
    left: 0;
@@ -161,7 +208,7 @@ nav {
    background: linear-gradient(to right, black, var(--transparent));
 }
 
-.devil-left .socials{
+.devil-left .socials {
    display: flex;
    flex-direction: column;
    position: absolute;
@@ -170,25 +217,43 @@ nav {
    z-index: 1;
    margin: 2rem;
 
-   i{
+   i {
       color: white;
       font-size: 2.5rem;
       margin: .5rem;
    }
 
-   i:hover{
+   i:hover {
       transform: scale(1.05);
       color: var(--main-color);
       transition: all .5s ease-in-out;
    }
 }
 
-.overlay-right{
-   background-image: url('./../Assets/Images/hero_bg.jpg') no-repeat center;
-   /* background: linear-gradient(to left, black, transparent); */
-   /* position: absolute; */
+.overlay-right {
    top: 0;
    right: 0;
    width: 70%;
    height: 100vh;
+   display: grid;
+   place-items: center;
+
+   .content {
+      padding: 0rem 3rem;
+      text-align: center;
+
+      .title {
+         background: linear-gradient(180deg, #3c0000, var(--main-color));
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         font-size: 3.5rem;
+      }
+
+      .hook {
+         font-size: 1.5rem;
+         margin-top: 2rem;
+      }
+
+   }
+   
 }
