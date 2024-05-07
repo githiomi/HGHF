@@ -245,6 +245,7 @@ nav {
       .title {
          background: linear-gradient(180deg, #3c0000, var(--main-color));
          -webkit-background-clip: text;
+         background-clip: text;
          -webkit-text-fill-color: transparent;
          font-size: 3.5rem;
       }
@@ -255,5 +256,4 @@ nav {
       }
 
    }
-   
 }
