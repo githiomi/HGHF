@@ -46,6 +46,10 @@ a {
    text-decoration: none;
 }
 
+i{
+   cursor: pointer;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
    width: .45rem;
@@ -97,14 +101,20 @@ nav {
    background: linear-gradient(to top, #3c0000, black);
    display: grid;
    place-items: center;
-   position: relative;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
 
-   i{
+   .close_icon{
       position: absolute;
       top: 0;
       right: 0;
       margin: 3rem;
-      font-size: 3rem;
+
+      i {
+         font-size: 3rem;
+      }
    }
 }
 
