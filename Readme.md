@@ -8,7 +8,7 @@ This is a contracted Job by Heaven's Gates and Hell's Flames to create a website
 
 ## PREVIEW
 
-![Website Preview](Assets/Images/Screenshot.png)
+![Website Preview](Assets/Images/screenshot.png)
 
 ## SYSTEM REQUIREMENTS
 
