@@ -6,28 +6,30 @@
 
 /* CSS Variables */
 :root {
-
    --background-color: #fdfdfd;
    --main-color: red;
    --text-color: black;
+   --alt-text-color: white;
    --hover-text-color: white;
    --dull-text-color: #555;
    --dark-grey: #222;
    --shadow-color: rgba(241, 143, 1, 0.5);
    --transparent: transparent;
    --background-gradient: linear-gradient(rgb(0, 0, 0, .1), var(--main-color));
+   --transition-duration: .1s;
 }
 
 .dark_mode {
    --background-color: #1E1E1E;
    --background-color: black;
    --text-color: white;
+   --alt-text-color: white;
    --dull-text-color: #999;
    --shadow-color: rgba(241, 143, 1, 0.6);
    --hover-text-color: black;
 }
 
-/* Common CSS */
+/* Common CSS Utils */
 * {
    margin: 0;
    padding: 0;
@@ -48,6 +50,14 @@ a {
 
 i {
    cursor: pointer;
+}
+
+.gradientText {
+   background: linear-gradient(180deg, #3c0000, var(--main-color));
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-size: 3.5rem;
 }
 
 .custom_button {
@@ -115,8 +125,25 @@ body {
    overflow-x: hidden;
 }
 
+.container {
+   max-width: 1480px;
+}
+
 section {
    min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.sectionHeader {
+   text-align: center;
+   padding: 1rem 0;
+}
+
+.sectionBody {
+   flex: 1;
+   display: grid;
+   place-items: center;
 }
 
 /* NAVIGATION */
@@ -127,7 +154,7 @@ section {
 
    i {
       font-size: 3rem;
-      color: white;
+      color: var(--text-color);
       margin: 3rem;
    }
 
@@ -153,6 +180,7 @@ nav {
       top: 0;
       right: 0;
       margin: 3rem;
+      color: var(--alt-text-color);
 
       i {
          font-size: 3rem;
@@ -175,6 +203,7 @@ nav {
       text-transform: uppercase;
       margin: 1rem;
       cursor: pointer;
+      color: var(--alt-text-color);
    }
 
    li:hover {
@@ -188,6 +217,7 @@ nav {
    width: 100%;
    position: relative;
    display: flex;
+   flex-direction: row;
 }
 
 .devil-left {
@@ -242,14 +272,6 @@ nav {
       padding: 0rem 3rem;
       text-align: center;
 
-      .title {
-         background: linear-gradient(180deg, #3c0000, var(--main-color));
-         -webkit-background-clip: text;
-         background-clip: text;
-         -webkit-text-fill-color: transparent;
-         font-size: 3.5rem;
-      }
-
       .hook {
          font-size: 1.5rem;
          margin-top: 2rem;
@@ -257,3 +279,66 @@ nav {
 
    }
 }
+
+/* WHO WE ARE SECTION */
+
+.whoWeAre {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   align-items: center;
+   gap: 2rem;
+
+   .text {
+      padding-inline: 3rem;
+
+      .sectionHeader {
+         text-align: start;
+      }
+   }
+
+   .stackedImages {
+      position: relative;
+
+      img:nth-child(2) {
+         width: 350px;
+         height: 350px;
+         position: absolute;
+         bottom: -5%;
+         right: -5%;
+      }
+   }
+}
+
+/* .whoWeAre {
+   display: grid;
+   margin: 3rem;
+   background-color: antiquewhite;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+}
+
+.whoWeAre div:nth-child(2),
+.whoWeAre div:nth-child(3) {
+   overflow: hidden;
+   justify-self: end;
+   object-fit: cover;
+
+   img {
+      image-resolution: 100;
+      object-fit: cover;
+   }
+}
+
+.whoWeAre div:nth-child(3) {
+   justify-self: start;
+}
+
+.whoWeAre div:nth-child(1),
+.whoWeAre div:nth-child(4) {
+   align-self: center;
+   background-color: #3c0000;
+}
+
+.whoWeAre div:nth-child(4) {
+   text-align: end;
+} */
