@@ -15,7 +15,8 @@
    --dark-grey: #222;
    --shadow-color: rgba(241, 143, 1, 0.5);
    --transparent: transparent;
-   --background-gradient: linear-gradient(rgb(0, 0, 0, .1), var(--main-color));
+   --background-gradient: linear-gradient(180deg, #3c0000, var(--main-color));
+   --soft-background-gradient: linear-gradient(to left, #3c0000, white);
    --transition-duration: .1s;
 }
 
@@ -27,6 +28,7 @@
    --dull-text-color: #999;
    --shadow-color: rgba(241, 143, 1, 0.6);
    --hover-text-color: black;
+   --soft-background-gradient: linear-gradient(to left, #3c0000, black);
 }
 
 /* Common CSS Utils */
@@ -281,12 +283,10 @@ nav {
 }
 
 /* WHO WE ARE SECTION */
-
 .whoWeAre {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    align-items: center;
-   gap: 2rem;
 
    .text {
       padding-inline: 3rem;
@@ -304,41 +304,63 @@ nav {
          height: 350px;
          position: absolute;
          bottom: -5%;
-         right: -5%;
+         right: -1%;
       }
    }
 }
 
-/* .whoWeAre {
+/* MISSION AND VISION SECTION */
+.missionAndVision {
    display: grid;
-   margin: 3rem;
-   background-color: antiquewhite;
    grid-template-columns: repeat(2, 1fr);
    grid-template-rows: repeat(2, 1fr);
-}
+   position: relative;
 
-.whoWeAre div:nth-child(2),
-.whoWeAre div:nth-child(3) {
-   overflow: hidden;
-   justify-self: end;
-   object-fit: cover;
+   i {
+      font-size: 4rem;
+      margin-inline: .5rem;
+   }
+
+   h1 {
+      margin-block: 2rem;
+   }
+
+   .mission,
+   .vision {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: var(--text-color);
+      padding-inline: 5rem;
+   }
 
    img {
-      image-resolution: 100;
-      object-fit: cover;
+      width: 730px;
+      height: 730px;
    }
-}
 
-.whoWeAre div:nth-child(3) {
-   justify-self: start;
-}
+   .centerBanner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      border: 3px solid var(--main-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .3rem;
 
-.whoWeAre div:nth-child(1),
-.whoWeAre div:nth-child(4) {
-   align-self: center;
-   background-color: #3c0000;
-}
+      p {
+         background-color: var(--background-color);
+         text-align: center;
+         font-size: 1.5rem;
+         padding: 3rem;
+         border-radius: 50%;
+         color: var(--text-color);
+         margin: 0;
+      }
+   }
 
-.whoWeAre div:nth-child(4) {
-   text-align: end;
-} */
+}
