@@ -70,7 +70,7 @@ i {
    -webkit-background-clip: text;
    background-clip: text;
    -webkit-text-fill-color: transparent;
-   font-size: 4rem;
+   font-size: 5rem;
    margin: 0;
 }
 
@@ -414,8 +414,8 @@ nav {
       position: relative;
 
       img:nth-child(2) {
-         width: 350px;
-         height: 350px;
+         width: 500px;
+         height: 300px;
          position: absolute;
          bottom: -5%;
          right: -1%;
